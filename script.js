@@ -1,24 +1,49 @@
-async function fetchComicIdentifier(email) {
+
+const jokeButton = document.getElementsByClassName("jokeButton")[0];
+const jokeText = document.getElementsByClassName("jokeText")[0];
+const jokeImage = document.getElementsByClassName("jokeImage")[0];
+const jokeTitle = document.getElementsByClassName("jokeTitle")[0];
+const jokeDate = document.getElementsByClassName("jokeDate")[0];
+
+async function getId(email) {
     const params = new URLSearchParams();
     if (email) {
         params.append('email', email);
     }
-    id= await fetch('https://fwd.innopolis.app/api/hw2?' + params.toString()).then(r =>r.json());
-    requestSite(id);
-}
-
-async function requestSite(id) {
+    return fetch('https://fwd.innopolis.app/api/hw2?' + params.toString()).then(r =>r.json());
     
-
-    result = await fetch("https://xkcd.com/"+id+"/info.0.json").then(r =>r.json());
-    console.log(result.month);
-    // display from result the image, its title, the date it was uploaded (using date.toLocaleDateString()), and the image's alternative text
-    console.log(result.img);
-    console.log(result.title);
-    console.log(result.alt);
-    console.log(result.date);
-    console.log(result.year);
-
 }
 
-fetchComicIdentifier("a.kopeikina@innopolis.university")
+async function fetchJoke(id) {
+    return await fetch(" https://getxkcd.vercel.app/api/comic?num="+id).then(r =>r.json());
+}
+
+jokeButton.addEventListener("click", async function () {
+  
+    GenerateJoke();
+
+});
+
+async function GenerateJoke(){
+
+    const jokeId = await getId("a.kopeikina@innopolis.university");
+    const joke = await fetchJoke(jokeId);
+  
+    await fillJokeObject(joke);
+}
+document.addEventListener("DOMContentLoaded", function() {
+    GenerateJoke();
+});
+
+
+const fillJokeObject = (jokeObj) => {
+    const { alt, title, img, year, month, day } = jokeObj;
+  
+    const date = new Date(year, month, day);
+  
+    jokeImage.src = img;
+    jokeImage.alt = alt;
+    jokeTitle.textContent = title;
+    jokeDate.textContent = date.toLocaleDateString();
+};
+  

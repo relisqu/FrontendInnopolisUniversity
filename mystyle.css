@@ -9,6 +9,18 @@ body {
       linear-gradient(-30deg, #f5c395 55%, transparent 55%);
   }
 
+  button{
+    background-color: #05595b;
+    color:#f5f5f5;    
+    font-size: 1.5em;
+    
+    box-shadow: 0px 2px 6px #1a393b;
+    border-radius: 10px;
+    padding: 10px;
+    border: 0;
+
+  }
+
   h1 {
     color: #062c30;
     text-align: center;
@@ -103,11 +115,25 @@ body {
     margin-bottom: 5em;
 
   }
-
   .work-projects-div {
     display: grid;
     grid-template-columns: 1fr 2fr;
 
+  }
+
+  .jokes {
+    display: flex;
+    display: inline-flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  img { 
+    object-fit: contain;
+    background-size: contain;
+    max-width:100%;
+    max-height:100%;
   }
 
   li {

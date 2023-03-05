@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+  ,
+  "scripts": {
+    "dev": "tsc --watch & nodemon dist"
+  }
+}

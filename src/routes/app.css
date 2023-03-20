@@ -1,10 +1,33 @@
+html {
+  height: 100%;
+}
+nav {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#game {
+  text-align: center;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#page {
+  display:flex; 
+  flex-direction:column;
+  height: 100%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #f5f5f5;
   font-weight: 100;
   font-size: large;
   text-align: center;
-
+  height: 100%;
+  
   background-image: linear-gradient(45deg, #ebaa32 30%, transparent 30%),
     linear-gradient(-30deg, #f5c395 55%, transparent 55%);
 }
@@ -63,7 +86,7 @@ span#head_highlight {
   color: #f5f5f5;
 }
 
-span#default {
+.default {
   text-align: right;
   font-weight: 100;
   font-size: larger;
@@ -133,7 +156,7 @@ img {
   object-fit: contain;
   background-size: contain;
   max-width:100%;
-  max-height:100%;
+  max-height: 300px;
 }
 
 li {
@@ -150,9 +173,6 @@ ul {
   margin-top: 1em;
 }
 
-.socials {
-  margin: 5em auto;
-}
 
 .color-icon {
   filter: brightness(1) invert(.2) sepia(.9) hue-rotate(140deg) saturate(300%);

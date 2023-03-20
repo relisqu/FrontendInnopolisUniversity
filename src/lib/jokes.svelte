@@ -29,10 +29,6 @@
         fillJokeObject(joke);
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        GenerateJoke();
-    });
-
 
     const fillJokeObject = (jokeObj: Joke) => {
         const { alt, title, img, year, month, day } = jokeObj;
@@ -54,21 +50,21 @@
         title: string;
     }   
 
-    GenerateJoke();
+    let resp = GenerateJoke();
 </script>
 
 <section id="jokes">
-    <div class="titleWithImage">
-      <h2 class="title">
-        Wanna have some jokes?
-        <br />
-        Check it out:
-      </h2>
-    </div>
     <div class="jokeBody">
-      <button on:click={GenerateJoke} class="jokeButton">Get a joke</button>
-      <h2 class="jokeTitle"> {joke_title}</h2>
-      <img class="jokeImage" alt={img_alt} src={img_src}/>
-      <p class="jokeDate">{joke_date}</p>
+        {#await resp}
+            <p>...Loading</p>
+        {:then _}
+            <h2 class="jokeTitle"> {joke_title}</h2>
+            <img class="jokeImage" alt={img_alt} src={img_src}/>
+            <p class="jokeDate">{joke_date}</p>
+        {:catch error}
+            <p>Something went wrong: {error.message}</p>
+        {/await}
+
+      
     </div>
   </section>

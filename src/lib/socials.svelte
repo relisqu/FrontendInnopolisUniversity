@@ -8,3 +8,12 @@
     <a id="tg-link" href="https://t.me/relisqu"><img class="color-icon" alt = "telegram"
         src="https://img.icons8.com/ios-filled/50/000000/telegram.png" /></a>
   </div>
+
+<style> 
+
+    .color-icon {
+        filter: brightness(1) invert(.2) sepia(.9) hue-rotate(140deg) saturate(300%);
+        margin-left: 1em;
+    }
+
+</style>

@@ -9,3 +9,13 @@
 
   </p>
 </div>
+<style>
+  .about_me {
+    margin-top: 5%;
+    text-align: center;
+    font-size: larger;
+    max-width: 30em;
+    margin: 6em auto;
+  }
+  
+</style>

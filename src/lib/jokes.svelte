@@ -58,13 +58,31 @@
         {#await resp}
             <p>...Loading</p>
         {:then _}
-            <h2 class="jokeTitle"> {joke_title}</h2>
-            <img class="jokeImage" alt={img_alt} src={img_src}/>
-            <p class="jokeDate">{joke_date}</p>
+            <h2> {joke_title}</h2>
+            <img alt={img_alt} src={img_src}/>
+            <p>{joke_date}</p>
         {:catch error}
             <p>Something went wrong: {error.message}</p>
         {/await}
 
       
     </div>
-  </section>
+</section>
+
+<style>
+        
+    #jokes {
+        display: flex;
+        display: inline-flex;
+        flex-flow: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    img { 
+        object-fit: contain;
+        background-size: contain;
+        max-width:100%;
+        max-height: 300px;
+    }
+</style>

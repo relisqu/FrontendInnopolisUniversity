@@ -1,4 +1,4 @@
-<div class="space-div">
+<div class="education">
     <h2>Education 📔</h2>
     <p>
     Currently studying in Innopolis University as a bachelor on Software
@@ -21,3 +21,31 @@
     </div>
     </div>
 </div>
+
+<style>
+        
+    .education {
+        margin-top: 3%;
+        margin-bottom: 5em;
+    }
+    .work-projects-div {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    
+    }
+
+    li {
+        list-style: none;
+        border-bottom: 3px dotted #194850;
+        padding-bottom: 0.5em;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 0.5em;
+
+    }
+
+    ul {
+        margin-top: 1em;
+    }
+
+</style>
